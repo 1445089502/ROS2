@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="ur">
+  <!-- Reuse installed official UR and BSD Robotiq geometry without copying it. -->
+  <xacro:include filename="$(find ur_simulation_gz)/urdf/ur_gz.urdf.xacro"/>
+  <xacro:include filename="$(find robotiq_description)/urdf/robotiq_2f_85_macro.urdf.xacro"/>
+  <xacro:robotiq_gripper name="gripper" prefix="" parent="tool0" include_ros2_control="false">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:robotiq_gripper>
+  <!-- Center of the measured inner pad faces at q=0.45 rad (about 40 mm opening). -->
+  <link name="grasp_tcp"/>
+  <joint name="grasp_tcp_joint" type="fixed">
+    <parent link="robotiq_85_base_link"/><child link="grasp_tcp"/>
+    <origin xyz="0 0 0.14218309" rpy="0 0 0"/>
+  </joint>
+  <ros2_control name="gripper_sim" type="system">
+    <hardware><plugin>gz_ros2_control/GazeboSimSystem</plugin></hardware>
+    <joint name="robotiq_85_left_knuckle_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <!-- Mimic relationships come from the official URDF; followers have no command interface. -->
+    <xacro:macro name="follower" params="joint">
+      <joint name="${joint}"><state_interface name="position"/><state_interface name="velocity"/></joint>
+    </xacro:macro>
+    <xacro:follower joint="robotiq_85_right_knuckle_joint"/>
+    <xacro:follower joint="robotiq_85_left_inner_knuckle_joint"/>
+    <xacro:follower joint="robotiq_85_right_inner_knuckle_joint"/>
+    <xacro:follower joint="robotiq_85_left_finger_tip_joint"/>
+    <xacro:follower joint="robotiq_85_right_finger_tip_joint"/>
+  </ros2_control>
+</robot>

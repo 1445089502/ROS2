@@ -1,0 +1,3 @@
+#!/usr/bin/env python3
+from arm_moveit.scene_setup import main
+raise SystemExit(main())

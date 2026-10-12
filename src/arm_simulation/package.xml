@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>arm_simulation</name><version>0.1.0</version>
+  <description>UR5e simulation extension with fixed-version gripper geometry</description>
+  <maintainer email="maintainer@example.invalid">Project maintainer</maintainer>
+  <license>Proprietary</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+  <exec_depend>ur_simulation_gz</exec_depend>
+  <exec_depend>robotiq_description</exec_depend>
+  <exec_depend>arm_moveit</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
+  <exec_depend>ros_gz_bridge</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

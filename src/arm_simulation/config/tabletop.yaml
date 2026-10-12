@@ -1,0 +1,25 @@
+tabletop_version: s07.1
+# Stay off the exact zero hard stop: delayed re-close locks in the current physics model.
+gripper: {open: 0.02, closed: 0.65, move_duration_sec: 4}
+cube_size: 0.04
+cube_mass: 0.04
+friction: 1.0
+contact_kp: 100000.0
+contact_kd: 1.0
+cubes:
+  - {id: red_cube, position: [0.45, -0.15, 0.42], color: [0.9, 0.04, 0.04, 1.0]}
+  - {id: green_cube, position: [0.58, 0.05, 0.42], color: [0.04, 0.85, 0.04, 1.0]}
+  - {id: blue_cube, position: [0.42, 0.2, 0.42], color: [0.04, 0.1, 0.9, 1.0]}
+camera:
+  position: [1.0, -0.8, 1.25]
+  look_at: [0.45, 0.0, 0.4]
+  width: 640
+  height: 480
+  horizontal_fov: 1.0471975512
+  rate: 10.0
+  near: 0.1
+  far: 4.0
+  frame: camera_link
+  optical_frame: camera_optical_frame
+  sync_tolerance_sec: 0.02
+  max_age_sec: 2.0

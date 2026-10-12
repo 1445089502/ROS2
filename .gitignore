@@ -1,0 +1,24 @@
+# Local and generated files
+/evidence/
+/agent_logs/
+/.trellis/
+/.agents/
+/.claude/
+/.codex/
+/.idea/
+.vscode/
+/build/
+/install/
+/log/
+**/__pycache__/
+**/.pytest_cache/
+*.pyc
+*.env
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.bag
+*.db3
+*.mcap

@@ -1,0 +1,26 @@
+# Controlled simulation tasks; units: rad, m, seconds. STOP never opens a gripper.
+uint8 MOVE_JOINT=1
+uint8 HOME=2
+uint8 MOVE_POSE=3
+uint8 STOP=4
+string task_id
+string scene_reset_id
+string target_id
+uint8 task_type
+string[] joint_names
+float64[] joint_positions
+geometry_msgs/PoseStamped target_pose
+float64 velocity_scale
+float64 acceleration_scale
+float64 timeout_sec
+---
+string task_id
+string state
+string error_code
+string message
+bool replayed
+---
+string task_id
+string state
+string phase
+float32 progress

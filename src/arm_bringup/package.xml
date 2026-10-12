@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>arm_bringup</name><version>0.1.0</version>
+  <description>Project simulation launch orchestration</description>
+  <maintainer email="maintainer@example.invalid">Project maintainer</maintainer>
+  <license>Proprietary</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>arm_core</exec_depend>
+  <exec_depend>arm_simulation</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>moveit_configs_utils</exec_depend>
+  <exec_depend>ur_moveit_config</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

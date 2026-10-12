@@ -1,0 +1,23 @@
+# Explicit experiment limits; do not replace URDF joint limits.
+config_version: s04.1
+adapter: gazebo_ur
+real_hardware: false
+planning_group: ur_manipulator
+base_frame: base_link
+tool_frame: tool0
+home_name: up
+max_velocity_scale: 0.1
+max_acceleration_scale: 0.1
+max_joint_acceleration: 1.0
+planning_time_sec: 5.0
+planning_attempts: 3
+state_max_age_sec: 2.0
+target_max_age_sec: 2.0
+max_task_timeout_sec: 180.0
+stop_timeout_sec: 12.0
+stop_speed_rad_sec: 0.01
+stop_stable_sec: 0.5
+workspace_min: [-1.0, -1.0, 0.02]
+workspace_max: [1.0, 1.0, 1.4]
+
+trajectory_action: /scaled_joint_trajectory_controller/follow_joint_trajectory

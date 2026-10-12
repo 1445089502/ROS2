@@ -1,0 +1,13 @@
+# Empty task_id queries manager status; otherwise queries a durable task record.
+string task_id
+---
+bool found
+string task_id
+string state
+string error_code
+string message
+string active_task_id
+string scene_reset_id
+string session_id
+bool ready
+uint64 execution_count

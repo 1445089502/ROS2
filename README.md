@@ -35,4 +35,3 @@ ARM_TASK_MANAGER=1 ros2 launch arm_bringup sim_bringup.launch.py \
 ```
 
 The exact package availability and GUI behavior depend on the ROS/Gazebo installation. See [S07 details](docs/s07/README.md) for the robot model, topics, and task interface.
-

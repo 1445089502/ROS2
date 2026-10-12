@@ -1,0 +1,18 @@
+# One configuration source. All robot times are /clock; deadlines use wall time.
+config_version: s05.1
+sim_mode: gazebo
+robot_type: ur5e
+real_hardware: false
+use_sim_time: true
+scenario_id: planning_scene
+ros_domain_id: 91
+gz_partition: ros2_s01_ur5e
+gazebo_gui: true
+launch_rviz: true
+world_file: generated:planning_scene
+camera_required: false  # Camera is introduced in S07, not silently assumed ready.
+startup_timeout_sec: 180.0
+stale_timeout_sec: 5.0
+required_controllers: [joint_state_broadcaster, scaled_joint_trajectory_controller]
+base_frame: base_link
+tool_frame: tool0
